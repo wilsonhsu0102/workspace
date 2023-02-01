@@ -1,4 +1,4 @@
-from tree import Tree
+from trees.tree import TreeNode
 import abc
 
 class BalancedTree(Tree, metaclass=abc.ABCMeta):
