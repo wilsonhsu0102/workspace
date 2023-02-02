@@ -43,7 +43,7 @@ class TreeNode(metaclass=abc.ABCMeta):
         pass
 
     @abc.abstractmethod
-    def insert(self, key: int):
+    def insert(self, key: int) -> Optional['TreeNode']:
         """Insert a node with the given key into the tree.
 
         Args:

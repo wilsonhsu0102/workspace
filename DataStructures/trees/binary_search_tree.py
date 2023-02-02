@@ -11,6 +11,7 @@ class BSTNode(BinaryTreeNode):
         left: Left child of the node.
         right: Right child of the node.
     """
+    key: int
     left: 'BSTNode'
     right: 'BSTNode'
 
@@ -23,20 +24,19 @@ class BSTNode(BinaryTreeNode):
             return self.right.search(key)
         return None
 
-    def insert(self, key: int):
+    def insert(self, key: int) -> Optional['BSTNode']:
         selfType = type(self) # For subclasses
         if self.key > key:
             if self.left is None:
                 self.left = selfType(key)
             else:
-                self.left.insert(key)
-            return
+                self.left = self.left.insert(key)
         elif self.key < key:
             if self.right is None:
                 self.right = selfType(key)
             else:
-                self.right.insert(key)
-        return
+                self.right = self.right.insert(key)
+        return self
 
     def delete(self, key: int) -> Optional['BSTNode']:
         if self.key == key:

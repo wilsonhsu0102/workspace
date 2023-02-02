@@ -9,6 +9,7 @@ class BalancedBSTNode(BSTNode):
         left: Left child of this Balanced BST Node
         right: Right child of this Balanced BST Node
     """
+    key: int
     left: 'BalancedBSTNode'
     right: 'BalancedBSTNode'
 

@@ -11,6 +11,7 @@ class BinaryTreeNode(TreeNode):
         left: Left child of the node.
         right: Right child of the node.
     """
+    key: int
     left: 'BinaryTreeNode'
     right: 'BinaryTreeNode'
 
