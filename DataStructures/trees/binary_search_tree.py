@@ -13,7 +13,7 @@ class BSTNode(BinaryTreeNode):
     """
     key: int
     left: 'BSTNode'
-    right: 'BSTNode'
+    right: 'BSTNode'        
 
     def search(self, key: int) -> Optional['BSTNode']:
         if self.key == key:
@@ -55,8 +55,12 @@ class BSTNode(BinaryTreeNode):
             new_root.right = self.right
             self = new_root
         elif self.key > key:
+            if self.left is None:
+                return self
             self.left = self.left.delete(key)
         else:
+            if self.right is None:
+                return self
             self.right = self.right.delete(key)
         return self
 
